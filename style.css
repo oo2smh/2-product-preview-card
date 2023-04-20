@@ -32,9 +32,9 @@ picture {
 }
 
 /* || BASE */
-.flow > * + * {
+/* .flow > * + * {
   margin-top: var(--flow-space, 0.75rem);
-}
+} */
 
 body {
   text-rendering: optimizeSpeed;
@@ -102,11 +102,17 @@ button {
   flex-direction: column;
   margin-inline: 0.5rem;
   box-shadow: 0 4px 4px hsl(30 10% 20% /.25);
+  border-radius: 20px;
+}
+
+.article__img * {
+  border-radius: 20px 20px 0 0;
 }
 
 .article__text {
   padding-inline: 1.25rem;
   padding-block: 1.25rem;
+  flex-direction: column;
 }
 .price-box {
   --gap: 1.5rem;
@@ -126,18 +132,24 @@ button {
 @media (min-width: 600px) {
   .article {
     display: grid;
-    grid-template-columns: clamp(15rem, 10vw, 25rem) 1fr;
+    grid-template-columns: 18rem 1fr;
     max-width: none;
   }
 
   .article__text {
-    max-width: clamp(350px, 8vw, 60rem);
+    max-width: clamp(350px, 8vw, 70rem);
+    justify-content: center;
+    gap: 0.75rem;
   }
 
   .btn--primary {
     width: 90%;
     margin-inline: auto;
-    margin-top: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .article__img * {
+    border-radius: 20px 0 0 20px;
   }
 
 }
